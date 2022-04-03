@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs trong website</title>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6247139f0bfe3f4a877107e8/1fviq9a6k';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body{
+            font-size: 16px;
+
+        }
+        #wrapper{
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        /*Style nav tab*/
+        .nav-tabs{
+            display: flex;
+            margin: 0px;
+            list-style: none;
+            padding: 0;
+            border-bottom: 3px solid #ddd;
+        }
+        .tabs{
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-tabs li{
+            margin-right: 10px;
+        }
+        .nav-tabs li a{
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+            position: relative;
+        }
+        .nav-tabs li a::after{
+            content: "";
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+           /* background: #e74c3c;*/
+           background: transparent;
+
+        }
+        .nav-tabs li.active a::after,.nav-tabs li:hover a::after{
+            background: #e74c3c;
+        }
+        /*Style content*/
+        .tab-content{
+            padding: 20px 0px;
+        }
+    </style>
+    <div id="wrapper">
+        <h1>Tab trong website</h1>
+        <div class="tabs">
+            <ul class="nav-tabs">
+                <li class="active"><a href="#menu_1">Menu 1</a></li>
+                <li><a href="#menu_2">Menu 2</a></li>
+                <li><a href="#menu_3">Menu 3</a></li>
+            </ul>
+            <div id="menu_1" class="tab-content">
+                <div class="tab-content-item">
+                    <h2>Menu 1</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut ipsam repudiandae, fugiat voluptatum magnam voluptatem impedit ratione a ipsum expedita amet reprehenderit alias saepe sit, cumque quis iusto sint nostrum.</p>
+                    <p>Architecto, odio reiciendis nihil, deserunt soluta fugiat minima in ad veritatis distinctio, nobis rerum similique sequi tempora perferendis recusandae dolor accusamus eveniet! Delectus assumenda vitae exercitationem nulla tenetur nostrum voluptatum.</p>
+                    <p>Minus neque incidunt atque iure deleniti veniam voluptatibus, numquam, libero illum suscipit vel! Voluptatum cupiditate dolorem ipsam, suscipit repellendus eligendi cumque odit sapiente ut sed illo voluptates maxime, asperiores libero.</p>
+                    <p>Animi distinctio architecto eveniet, vero error corporis unde dolores fugiat dolor quidem quod illum debitis, impedit obcaecati. Ad vitae repellendus blanditiis aperiam maiores, necessitatibus itaque incidunt provident voluptatibus amet illo.</p>
+                </div>
+                <div id="menu_2" class="tab-content-item">
+                    <h2>Menu 2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi doloremque sed quos iusto aut, autem cupiditate, maxime explicabo quas, non expedita consequatur blanditiis rem! Deserunt aspernatur accusamus nulla vitae non.</p>
+                    <p>Quasi laborum officia animi esse ab harum sit, fuga nam nemo ipsa voluptates dolore perferendis laboriosam sequi temporibus obcaecati reprehenderit iste. Quidem, recusandae ex. Vitae corrupti atque sit odit sint.</p>
+                    <p>Ipsam reiciendis dolorem tempore tempora, dignissimos doloremque similique inventore itaque nobis rerum placeat nisi vero exercitationem sint vitae ex odio eligendi asperiores fugit. Facere consequatur aliquid modi, rem accusamus pariatur.</p>
+                </div>
+                <div id="menu_3" class="tab-content-item">
+                    <h2>Menu 3</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eaque commodi iste temporibus suscipit quae esse ea tempora magnam architecto officia consequuntur, nisi, asperiores vitae maiores nemo dolorem, labore tenetur.</p>
+                    <p>Accusamus sequi a temporibus ipsum doloremque ex consectetur, soluta minima excepturi iure nostrum, error fugit laborum dolores assumenda inventore quas in cupiditate itaque nam reprehenderit molestiae quis. Doloribus, at optio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('.tab-content-item').hide();
+            $('.tab-content-item:first-child').fadeIn();
+        $('.nav-tabs li').click(function(){
+           
+            $('.nav-tabs li').removeClass('active')
+             $(this).addClass('active');
+
+             //Show content tương ứng 
+             let id_tab_content= $(this).children('a').attr('href');
+             $('.tab-content-item').hide();
+             $(id_tab_content).fadeIn();
+             
+             return false;
+        
+
+        });
+    });
+</script>
+</html>
